@@ -1,0 +1,71 @@
+{
+  "name": "saleor-app-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm generate && NODE_OPTIONS='--inspect' next dev",
+    "build": "pnpm generate && next build",
+    "start": "next start",
+    "lint": "pnpm generate && prettier --loglevel warn --write . && eslint --fix .",
+    "fetch-schema": "curl https://raw.githubusercontent.com/saleor/saleor/${npm_package_saleor_schemaVersion}/saleor/graphql/schema.graphql > graphql/schema.graphql",
+    "generate": "graphql-codegen",
+    "prepare": "husky install"
+  },
+  "saleor": {
+    "schemaVersion": "3.4"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/lab": "4.0.0-alpha.61",
+    "@saleor/app-sdk": "0.14.1",
+    "@saleor/macaw-ui": "^0.6.5",
+    "@sentry/nextjs": "^7.14.1",
+    "@urql/exchange-auth": "^1.0.0",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
+    "jose": "^4.10.0",
+    "next": "12.3.1",
+    "node-fetch": "^3.2.10",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-helmet": "^6.1.0",
+    "retes": "^0.33.0",
+    "urql": "^3.0.3"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.13.3",
+    "@graphql-codegen/introspection": "2.2.1",
+    "@graphql-codegen/typed-document-node": "^2.3.3",
+    "@graphql-codegen/typescript": "2.7.3",
+    "@graphql-codegen/typescript-operations": "2.5.3",
+    "@graphql-codegen/typescript-urql": "^3.7.0",
+    "@graphql-codegen/urql-introspection": "2.2.1",
+    "@graphql-typed-document-node/core": "^3.1.1",
+    "@types/node": "^18.8.1",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "autoprefixer": "^10.4.12",
+    "clean-publish": "^4.0.1",
+    "eslint": "^8.24.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "husky": "^8.0.1",
+    "postcss": "^8.4.17",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
+    "typescript": "4.8.4"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "eslint --cache --fix",
+    "*.{js,ts,tsx,css,md,json}": "prettier --write"
+  }
+}
