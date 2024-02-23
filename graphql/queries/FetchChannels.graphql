@@ -1,0 +1,8 @@
+# In example we are downloading products by channel
+query FetchChannels {
+  channels {
+    name
+    id
+    slug
+  }
+}

@@ -1,0 +1,11 @@
+# In example we are downloading products by channel
+query FetchProducts($count: Int!, $channel: String!) {
+    products(first: $count, channel: $channel) {
+        edges {
+            node {
+                id,
+                name
+            }
+        }
+    }
+}
