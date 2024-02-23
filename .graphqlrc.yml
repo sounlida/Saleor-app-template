@@ -1,0 +1,15 @@
+schema: https://vercel.saleor.cloud/graphql/
+documents: graphql/**/*.graphql
+extensions:
+  codegen:
+    overwrite: true
+    generates:
+      generated/graphql.ts:
+        plugins:
+          - typescript
+          - typescript-operations
+          - typescript-urql:
+              documentVariablePrefix: "Untyped"
+          - typed-document-node
+          - add:
+              content: '// @ts-nocheck'
